@@ -1,6 +1,5 @@
 title: Batch Command Reference
 description: A comprehensive guide to Windows batch commands
-#theme: jekyll-theme-minimal
 theme: jekyll-theme-hacker
 markdown: kramdown
 highlighter: rouge
