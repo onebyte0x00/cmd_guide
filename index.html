@@ -8,28 +8,90 @@ title: Home
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
     {% include header.html %}
     {% include nav.html %}
     
-    <main>
+    <main class="homepage">
         <h1>Windows Batch Command Reference</h1>
-        <p>Welcome to the comprehensive guide for Windows CMD batch commands.</p>
+        <p class="subtitle">Comprehensive guide to Windows CMD batch commands with examples and explanations</p>
+        
+        <div class="quick-links">
+            <a href="{{ '/batch-commands/' | relative_url }}" class="big-button">
+                Browse All Commands
+            </a>
+            <a href="{{ '/batch-commands/echo.html' | relative_url }}" class="big-button">
+                ECHO Command
+            </a>
+            <a href="{{ '/batch-commands/for.html' | relative_url }}" class="big-button">
+                FOR Command
+            </a>
+            <a href="{{ '/batch-commands/if.html' | relative_url }}" class="big-button">
+                IF Command
+            </a>
+        </div>
         
         <section class="featured-commands">
-            <h2>Popular Commands</h2>
-            <ul>
-                <li><a href="/batch-commands/echo.html">ECHO</a></li>
-                <li><a href="/batch-commands/for.html">FOR</a></li>
-                <li><a href="/batch-commands/if.html">IF</a></li>
-            </ul>
+            <h2>Most Used Commands</h2>
+            <div class="command-grid">
+                <div class="command-card">
+                    <h3><a href="{{ '/batch-commands/echo.html' | relative_url }}">ECHO</a></h3>
+                    <p>Display messages or enable/disable command echoing</p>
+                    <pre><code class="language-batch">ECHO Hello World
+@ECHO OFF</code></pre>
+                </div>
+                
+                <div class="command-card">
+                    <h3><a href="{{ '/batch-commands/for.html' | relative_url }}">FOR</a></h3>
+                    <p>Loop through files, directories, or text</p>
+                    <pre><code class="language-batch">FOR %i IN (*.txt) DO ECHO %i
+FOR /L %i IN (1,1,10) DO ECHO %i</code></pre>
+                </div>
+                
+                <div class="command-card">
+                    <h3><a href="{{ '/batch-commands/if.html' | relative_url }}">IF</a></h3>
+                    <p>Conditional statement execution</p>
+                    <pre><code class="language-batch">IF "%var%"=="value" ECHO Match
+IF EXIST file.txt DEL file.txt</code></pre>
+                </div>
+                
+                <div class="command-card">
+                    <h3><a href="{{ '/batch-commands/set.html' | relative_url }}">SET</a></h3>
+                    <p>Display or set environment variables</p>
+                    <pre><code class="language-batch">SET var=value
+SET /A result=5+3</code></pre>
+                </div>
+            </div>
+        </section>
+        
+        <section class="getting-started">
+            <h2>Getting Started with Batch Scripts</h2>
+            <ol>
+                <li>Create a file with <code>.bat</code> or <code>.cmd</code> extension</li>
+                <li>Start with <code>@ECHO OFF</code> to hide commands</li>
+                <li>Add your commands (one per line)</li>
+                <li>Run by double-clicking or from command prompt</li>
+            </ol>
+            <div class="example-script">
+                <h3>Example Script</h3>
+                <pre><code class="language-batch">@ECHO OFF
+:: This is a comment
+ECHO Starting backup...
+XCOPY "C:\source" "D:\backup" /E /I
+IF ERRORLEVEL 1 (
+    ECHO Backup failed!
+) ELSE (
+    ECHO Backup completed successfully
+)
+PAUSE</code></pre>
+            </div>
         </section>
     </main>
     
     {% include footer.html %}
-    <script src="/assets/js/script.js"></script>
+    <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
 </body>
 </html>
