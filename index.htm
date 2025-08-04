@@ -1,0 +1,35 @@
+---
+layout: default
+title: Home
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    {% include header.html %}
+    {% include nav.html %}
+    
+    <main>
+        <h1>Windows Batch Command Reference</h1>
+        <p>Welcome to the comprehensive guide for Windows CMD batch commands.</p>
+        
+        <section class="featured-commands">
+            <h2>Popular Commands</h2>
+            <ul>
+                <li><a href="/batch-commands/echo.html">ECHO</a></li>
+                <li><a href="/batch-commands/for.html">FOR</a></li>
+                <li><a href="/batch-commands/if.html">IF</a></li>
+            </ul>
+        </section>
+    </main>
+    
+    {% include footer.html %}
+    <script src="/assets/js/script.js"></script>
+</body>
+</html>
