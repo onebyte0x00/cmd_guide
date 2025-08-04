@@ -1,4 +1,4 @@
 # batch_guide
-simple website for batch CMD commands with syntax highlighting.
+simple website for batch CMD commands with syntax highlighting.  
 at the moment im using GitHub's Jekyll theme Documentation, 
-this is being build with LLMs help (im learning js)
+this is being built with LLMs help (im learning js)
