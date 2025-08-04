@@ -85,3 +85,77 @@ code {
         gap: 0.5rem;
     }
 }
+/* Command Detail Page Styles */
+.command-detail {
+    background: white;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.command-detail h1 {
+    color: #0366d6;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+.command-detail h2 {
+    color: #24292e;
+    margin-top: 2rem;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 0.3rem;
+}
+
+.command-detail h3 {
+    color: #555;
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.example {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-left: 3px solid #0366d6;
+}
+
+/* Commands List Page */
+.commands-list .command-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.commands-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.commands-list li {
+    margin-bottom: 0.8rem;
+}
+
+.commands-list a {
+    text-decoration: none;
+    color: #0366d6;
+    font-weight: 500;
+}
+
+.commands-list a:hover {
+    text-decoration: underline;
+}
+
+.search-box {
+    margin: 1rem 0;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 500px;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
