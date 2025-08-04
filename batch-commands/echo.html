@@ -1,0 +1,35 @@
+---
+layout: default
+title: ECHO Command
+---
+
+<article class="command-detail">
+    <h1>ECHO Command</h1>
+    
+    <section class="syntax">
+        <h2>Syntax</h2>
+        <pre><code class="language-batch">ECHO [ON | OFF]
+ECHO [message]</code></pre>
+    </section>
+    
+    <section class="description">
+        <h2>Description</h2>
+        <p>Displays messages or turns command echoing on or off.</p>
+    </section>
+    
+    <section class="examples">
+        <h2>Examples</h2>
+        <pre><code class="language-batch">@ECHO OFF
+ECHO Hello World!
+ECHO.
+ECHO Current date is: %DATE%</code></pre>
+    </section>
+    
+    <section class="notes">
+        <h2>Notes</h2>
+        <ul>
+            <li>Use <code>@ECHO OFF</code> at the beginning of scripts to hide commands</li>
+            <li>Add <code>.</code> after ECHO to display empty line: <code>ECHO.</code></li>
+        </ul>
+    </section>
+</article>
