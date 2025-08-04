@@ -1,0 +1,58 @@
+---
+layout: default
+title: Batch Commands
+---
+
+<main class="commands-list">
+    <h1>Batch Command Reference</h1>
+    
+    <div class="search-box">
+        <input type="text" id="commandSearch" placeholder="Search commands...">
+    </div>
+    
+    <div class="command-categories">
+        <section class="basic-commands">
+            <h2>Basic Commands</h2>
+            <ul>
+                <li><a href="echo.html">ECHO</a> - Display messages</li>
+                <li><a href="set.html">SET</a> - Set environment variables</li>
+                <li><a href="rem.html">REM</a> - Add comments</li>
+            </ul>
+        </section>
+        
+        <section class="flow-control">
+            <h2>Flow Control</h2>
+            <ul>
+                <li><a href="if.html">IF</a> - Conditional execution</li>
+                <li><a href="for.html">FOR</a> - Loop through items</li>
+                <li><a href="goto.html">GOTO</a> - Jump to label</li>
+            </ul>
+        </section>
+        
+        <section class="file-operations">
+            <h2>File Operations</h2>
+            <ul>
+                <li><a href="copy.html">COPY</a> - Copy files</li>
+                <li><a href="del.html">DEL</a> - Delete files</li>
+                <li><a href="dir.html">DIR</a> - List directory contents</li>
+            </ul>
+        </section>
+    </div>
+</main>
+
+<script>
+document.getElementById('commandSearch').addEventListener('input', function() {
+    const searchTerm = this.value.toLowerCase();
+    const links = document.querySelectorAll('.command-categories a');
+    
+    links.forEach(link => {
+        const text = link.textContent.toLowerCase();
+        const listItem = link.parentElement;
+        if (text.includes(searchTerm)) {
+            listItem.style.display = 'list-item';
+        } else {
+            listItem.style.display = 'none';
+        }
+    });
+});
+</script>
