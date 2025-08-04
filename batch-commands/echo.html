@@ -15,21 +15,46 @@ ECHO [message]</code></pre>
     <section class="description">
         <h2>Description</h2>
         <p>Displays messages or turns command echoing on or off.</p>
+        <ul>
+            <li><code>ECHO ON</code> - Displays each command before execution (default)</li>
+            <li><code>ECHO OFF</code> - Stops displaying commands (but not outputs)</li>
+            <li><code>@ECHO OFF</code> - Hides the ECHO OFF command itself</li>
+            <li><code>ECHO message</code> - Displays the specified message</li>
+            <li><code>ECHO.</code> - Displays an empty line</li>
+        </ul>
     </section>
     
     <section class="examples">
         <h2>Examples</h2>
-        <pre><code class="language-batch">@ECHO OFF
+        
+        <div class="example">
+            <h3>Basic Usage</h3>
+            <pre><code class="language-batch">@ECHO OFF
 ECHO Hello World!
+ECHO Current date: %DATE%
+ECHO.</code></pre>
+        </div>
+        
+        <div class="example">
+            <h3>Creating a Blank Line</h3>
+            <pre><code class="language-batch">ECHO Line 1
 ECHO.
-ECHO Current date is: %DATE%</code></pre>
+ECHO Line 2</code></pre>
+        </div>
+        
+        <div class="example">
+            <h3>Special Characters</h3>
+            <pre><code class="language-batch">ECHO ^& ^| ^< ^> ^^</code></pre>
+            <p>Output: & | < > ^</p>
+        </div>
     </section>
     
     <section class="notes">
         <h2>Notes</h2>
         <ul>
-            <li>Use <code>@ECHO OFF</code> at the beginning of scripts to hide commands</li>
-            <li>Add <code>.</code> after ECHO to display empty line: <code>ECHO.</code></li>
+            <li>To display special characters, prefix them with a caret (^)</li>
+            <li>Use <code>@</code> prefix to hide individual commands</li>
+            <li><code>ECHO</code> without parameters shows the current echo state</li>
         </ul>
     </section>
 </article>
