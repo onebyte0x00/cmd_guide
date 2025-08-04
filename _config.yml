@@ -1,6 +1,8 @@
 title: Batch Command Reference
 description: A comprehensive guide to Windows batch commands
-remote_theme: b2a3e8/jekyll-theme-console
+remote_theme: tomjoht/documentation-theme-jekyll
+plugins:
+  - jekyll-remote-theme
 
 #theme: jekyll-theme-hacker
 markdown: kramdown
