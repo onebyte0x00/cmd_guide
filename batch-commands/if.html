@@ -1,0 +1,78 @@
+---
+layout: default
+title: IF Command
+---
+
+<article class="command-detail">
+    <h1>IF Command</h1>
+    
+    <section class="syntax">
+        <h2>Syntax</h2>
+        <pre><code class="language-batch">IF [NOT] ERRORLEVEL number command
+IF [NOT] string1==string2 command
+IF [NOT] EXIST filename command
+IF [NOT] DEFINED variable command
+IF [NOT] CMDEXTVERSION number command
+IF [/I] string1 compare-op string2 command</code></pre>
+    </section>
+    
+    <section class="description">
+        <h2>Description</h2>
+        <p>Performs conditional processing in batch programs.</p>
+        <ul>
+            <li><code>NOT</code> - Reverses the condition</li>
+            <li><code>ERRORLEVEL</code> - Checks exit code</li>
+            <li><code>==</code> - String comparison</li>
+            <li><code>EXIST</code> - File existence check</li>
+            <li><code>DEFINED</code> - Variable existence check</li>
+            <li><code>/I</code> - Case-insensitive comparison</li>
+        </ul>
+    </section>
+    
+    <section class="examples">
+        <h2>Examples</h2>
+        
+        <div class="example">
+            <h3>Basic Conditions</h3>
+            <pre><code class="language-batch">IF "%OS%"=="Windows_NT" ECHO Running on Windows NT
+IF NOT EXIST "C:\file.txt" ECHO File not found</code></pre>
+        </div>
+        
+        <div class="example">
+            <h3>Error Level Check</h3>
+            <pre><code class="language-batch">SOME_COMMAND
+IF ERRORLEVEL 1 (
+    ECHO Command failed with error %ERRORLEVEL%
+    EXIT /B 1
+)</code></pre>
+        </div>
+        
+        <div class="example">
+            <h3>Nested IF</h3>
+            <pre><code class="language-batch">IF "%1"=="" (
+    ECHO Missing parameter
+) ELSE IF "%1"=="/?" (
+    ECHO Display help
+) ELSE (
+    ECHO Processing with %1
+)</code></pre>
+        </div>
+        
+        <div class="example">
+            <h3>Case Insensitive</h3>
+            <pre><code class="language-batch">IF /I "%choice%"=="YES" (
+    ECHO You said yes
+)</code></pre>
+        </div>
+    </section>
+    
+    <section class="notes">
+        <h2>Notes</h2>
+        <ul>
+            <li>Always quote variables: <code>IF "%var%"=="value"</code></li>
+            <li>For numeric comparisons, use <code>EQU</code>, <code>NEQ</code>, <code>LSS</code>, <code>LEQ</code>, <code>GTR</code>, <code>GEQ</code></li>
+            <li><code>ERRORLEVEL n</code> is TRUE if errorlevel is ≥ n</li>
+            <li>Use parentheses for multi-line commands</li>
+        </ul>
+    </section>
+</article>
